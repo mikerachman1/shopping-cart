@@ -8,6 +8,15 @@ const Item = (props) => {
       <h3>{details.price}</h3>
       <p>{details.description}</p>
       <img src={details.image} alt={details.title} />
+      <label htmlFor="quantity">
+        Quantity: 
+        <input 
+          type="number"
+          id="quantity"
+          name="quantity"
+        />
+      </label>
+      <button>Add To Cart</button>
     </div>
   );
 };

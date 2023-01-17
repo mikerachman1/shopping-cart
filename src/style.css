@@ -41,3 +41,13 @@ nav {
   flex-direction: column;
   gap: 2rem;
 }
+
+.sticky-cart {
+  position: sticky;
+  top: 0;
+  color: red;
+  background-color: bisque;
+  padding: .5rem;
+  display: flex;
+  justify-content: space-around;
+}

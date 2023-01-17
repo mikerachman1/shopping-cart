@@ -17,6 +17,10 @@ const Shop = () => {
 
   return (
     <div className="shop">
+      <div className="sticky-cart">
+        <h3>Items in Cart: 0</h3>
+        <h3>Total: $0</h3>
+      </div>
       <h1>Shop</h1>
       <div className="items">
         {items.map(item => <Item key={item.id} details={item} />)}
