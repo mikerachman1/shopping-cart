@@ -18,7 +18,9 @@ const Shop = () => {
   return (
     <div className="shop">
       <h1>Shop</h1>
-      {items.map(item => <Item key={item.id} details={item} />)}
+      <div className="items">
+        {items.map(item => <Item key={item.id} details={item} />)}
+      </div>
     </div>
   );
 };

@@ -25,3 +25,19 @@ nav {
   text-decoration-color: white;
   font-size: 1.2rem;
 }
+
+.item-container > img {
+  max-width: 100px;
+  height: auto;
+}
+
+.item-container {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
