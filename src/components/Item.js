@@ -16,6 +16,7 @@ const Item = (props) => {
         Quantity: 
         <input 
           type="number"
+          min="1"
           id="quantity"
           name="quantity"
           value={quantity}

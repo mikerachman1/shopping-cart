@@ -13,6 +13,7 @@ function App() {
   const [total, setTotal] = useState(0);
 
   const addToCart = (item, quantity, price) => {
+    if (quantity < 1) { return }
     setCart([...cart, {itemDetails: item, quantity: quantity}]);
     setNumberItems(numberItems + quantity);
     setTotal(total + (price * quantity))
