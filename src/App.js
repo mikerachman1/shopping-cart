@@ -13,7 +13,7 @@ function App() {
   const [total, setTotal] = useState(0);
 
   const addToCart = (item, quantity, price) => {
-    setCart([...cart, item]);
+    setCart([...cart, {itemDetails: item, quantity: quantity}]);
     setNumberItems(numberItems + quantity);
     setTotal(total + (price * quantity))
   };
@@ -30,7 +30,11 @@ function App() {
                                         numberItems={numberItems}
                                         total={total}
                                         />} />
-          <Route path="/cart" element={<Cart cart={cart}/>} />
+          <Route path="/cart" element={<Cart 
+                                        cart={cart}
+                                        numberItems={numberItems}
+                                        total={total}
+                                        />} />
         </Routes>
       </BrowserRouter>
     </div>
