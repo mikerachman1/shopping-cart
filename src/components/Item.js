@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Item = (props) => {
-  const details = props.details
+  const [quantity, setQuantity] = useState(1)
+
+  const { details, addToCart } = props;
+  
   return (
     <div className="item-container">
       <h3>{details.title}</h3>
@@ -14,9 +17,13 @@ const Item = (props) => {
           type="number"
           id="quantity"
           name="quantity"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
         />
       </label>
-      <button>Add To Cart</button>
+      <button onClick={() => addToCart(details, parseInt(quantity), details.price)}>
+        Add To Cart
+      </button>
     </div>
   );
 };

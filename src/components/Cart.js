@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Cart = () => {
-  const [cartitems, setCartItems] = useState([]);
-
+const Cart = (props) => {
+  const {cart} = props;
   return (
     <div className="cart">
       <h1>Cart</h1>
+      <div className="cart-contents">
+
+      </div>
       <button>Complete Order</button>
     </div>
   );
