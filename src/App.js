@@ -25,6 +25,22 @@ function App() {
     setTotal(total - (price * quantity));
   };
 
+  const incrementItem = (itemIndex, item, price) => {
+    const oldQuantity = cart[itemIndex].quantity
+    setCart(cart.splice(itemIndex, 1, {itemDetails: item, quantity: oldQuantity + 1}))
+    setNumberItems(numberItems + 1);
+    setTotal(total + price)
+    console.log(cart)
+  };
+
+  const decrementItem = (itemIndex, item, price) => {
+    const oldQuantity = cart[itemIndex].quantity
+    setCart(cart.splice(itemIndex, 1, {itemDetails: item, quantity: oldQuantity - 1}))
+    setNumberItems(numberItems - 1);
+    setTotal(total - price)
+  };
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -42,6 +58,8 @@ function App() {
                                         numberItems={numberItems}
                                         total={total}
                                         deleteFromCart={deleteFromCart}
+                                        incrementItem={incrementItem}
+                                        decrementItem={decrementItem}
                                         />} />
         </Routes>
       </BrowserRouter>
