@@ -26,6 +26,15 @@ nav {
   font-size: 1.2rem;
 }
 
+.shop-cart-link {
+  color: red;
+  text-decoration-color: red;
+}
+
+.shop-cart-link:hover {
+  color: rgb(113, 3, 3);
+}
+
 .item-container > img {
   max-width: 100px;
   height: auto;
