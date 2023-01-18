@@ -1,4 +1,5 @@
 const padPrices = (num) => {
+  if (num <= 0) { return '0'}
   const numString = num.toString();
   if (numString.includes('.')) {
     const decimalIndex = numString.indexOf('.')
