@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Cart = () => {
+  const [cartitems, setCartItems] = useState([]);
+
   return (
     <div className="cart">
       <h1>Cart</h1>
