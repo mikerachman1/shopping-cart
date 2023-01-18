@@ -18,6 +18,12 @@ function App() {
     setTotal(total + (price * quantity))
   };
 
+  const deleteFromCart = (itemIndex, quantity, price) => {
+    setCart(cart.filter(item => item !== cart[itemIndex]))
+    setNumberItems(numberItems - quantity);
+    setTotal(total - (price * quantity));
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -34,6 +40,7 @@ function App() {
                                         cart={cart}
                                         numberItems={numberItems}
                                         total={total}
+                                        deleteFromCart={deleteFromCart}
                                         />} />
         </Routes>
       </BrowserRouter>

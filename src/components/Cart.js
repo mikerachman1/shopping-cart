@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import padPrices from "./helpers/padPrices";
 
 const Cart = (props) => {
-  const { cart, numberItems, total } = props;
+  const { cart, numberItems, total, deleteFromCart } = props;
   // const [collapsedCart, setCollapsedCart] = useState(cart);
 
   // useEffect on mount to collapse duplicate items in cart
@@ -25,6 +25,7 @@ const Cart = (props) => {
               <p>Quantity : {item.quantity}</p>
               <p>Price : {padPrices(item.itemDetails.price)}</p>
               <p>Sub-Total : {padPrices(item.quantity * item.itemDetails.price)}</p>
+              <button onClick={() => deleteFromCart(cart.indexOf(item), item.quantity, item.itemDetails.price)}>Delete From Cart</button>
             </li>
           ))}
         </ul>
