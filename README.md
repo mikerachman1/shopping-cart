@@ -4,4 +4,6 @@ The goal is to create a shopping cart app with at least two routes to practice r
 
 This app will also include tests to practice react testing skills.
 
+product info was used from: Fake Store API https://fakestoreapi.com
+
 project-link: https://www.theodinproject.com/lessons/javascript-shopping-cart
