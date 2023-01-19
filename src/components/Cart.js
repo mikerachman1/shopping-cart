@@ -32,7 +32,9 @@ const Cart = (props) => {
         </ul>
       </div>
       <h3>Order Total: {padPrices(totalPrice)}</h3>
-      <button>Complete Order</button>
+      {totalItems > 0 && 
+        <button>Complete Order</button>
+      }
     </div>
   );
 };
