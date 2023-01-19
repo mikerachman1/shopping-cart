@@ -4,7 +4,7 @@ import padPrices from "./helpers/padPrices";
 import { Link } from "react-router-dom";
 
 const Shop = (props) => {
-  const { products, addToCart, numberItems, total } = props;
+  const { products, addToCart, totalItems, totalPrice } = props;
 
   return (
     <div className="shop">
@@ -14,8 +14,8 @@ const Shop = (props) => {
                       to="/cart"
                       >
                       Cart
-                      </Link>: {numberItems}</h3>
-        <h3>Total: ${padPrices(total)}</h3>
+                      </Link>: {totalItems}</h3>
+        <h3>Total: ${padPrices(totalPrice)}</h3>
       </div>
       <h1>Shop</h1>
       <div className="items">

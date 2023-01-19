@@ -23,7 +23,7 @@ const Item = (props) => {
           onChange={(e) => setQuantity(e.target.value)}
         />
       </label>
-      <button onClick={() => addToCart(details, parseInt(quantity), details.price)}>
+      <button onClick={() => addToCart(details, parseInt(quantity))}>
         Add To Cart
       </button>
     </div>
