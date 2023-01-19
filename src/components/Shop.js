@@ -14,10 +14,9 @@ const Shop = (props) => {
                       to="/cart"
                       >
                       Cart
-                      </Link>: {totalItems}</h3>
+                      </Link>  : {totalItems}</h3>
         <h3>Total: ${padPrices(totalPrice)}</h3>
       </div>
-      <h1>Shop</h1>
       <div className="items">
         {products.map(item => <Item key={item.id} 
                                     details={item}

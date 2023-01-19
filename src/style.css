@@ -3,13 +3,25 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body, #root, .App {
+  margin: 0;
+  height: 100vh;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color: rgb(0, 82, 34);
+  background-color: black;
   color: white;
+}
+
+nav > h3 {
+  background-color: #fff;
+  color: black;
+  padding: 1rem;
+  border-radius: 4px;
 }
 
 .nav-links {
@@ -24,38 +36,131 @@ nav {
   color: white;
   text-decoration-color: white;
   font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.nav-links > a:hover {
+  color: #22a88d;
+  text-decoration-color: #22a88d;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  background-color: #dbdbdb;
+  height: 100%;
+}
+
+.about-info {
+  width: 90%;
+  height: max-content;
+  background-color: white;
+  border: 15px solid #22a88d;
+  border-radius: 4px;
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-info > img {
+  max-width: 600px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.about-info > h1 {
+  margin: 10px;
+}
+
+.about-info > p {
+  max-width: 600px;
+  font-size: 20px;
+}
+
+.shop {
+  background-color: #dbdbdb;
 }
 
 .shop-cart-link {
-  color: red;
-  text-decoration-color: red;
+  color: #fff;
+  text-decoration-color: #fff;
 }
 
 .shop-cart-link:hover {
-  color: rgb(113, 3, 3);
+  color: rgb(207, 0, 0);
+  text-decoration-color: rgb(207, 0, 0);
 }
 
-.item-container > img {
-  max-width: 100px;
+.item-image {
+  max-width: 200px;
   height: auto;
+  grid-area: image;
+  margin: 1.5rem;
 }
 
 .item-container {
   border: 1px solid black;
   border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.item-info {
+  max-width: 60%;
+}
+
+.item-form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.item-form > label > input {
+  height: 40px;
+  width: 50px;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.item-form > label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.item-form > button {
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 16px;
+  transition: all .14s ease-out;
+  background-color: #22a88d;
+}
+
+.item-form > button:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px,-4px);
 }
 
 .items {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 2rem;
+  padding-bottom: 2rem;
 }
 
 .sticky-cart {
   position: sticky;
   top: 0;
-  color: red;
-  background-color: bisque;
+  background-color: #22a88d;
   padding: .5rem;
   display: flex;
   justify-content: space-around;
