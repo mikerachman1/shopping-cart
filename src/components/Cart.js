@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import padPrices from "./helpers/padPrices";
 
 const Cart = (props) => {
@@ -17,21 +17,21 @@ const Cart = (props) => {
       <h3>Items in Cart: {totalItems}</h3>
       <div className="cart-contents">
         <ul>
-          {cartItems.map((item, i) => (
-            <li key={item.id}>
-              <h4>{item.title}</h4>
-              <p>Quantity : {quantityItems[i]}
-                <button>+</button>
-                <button>-</button>
+          {cartItems.map((ittItem, i) => (
+            <li key={ittItem.id}>
+              <h4>{ittItem.item.title}</h4>
+              <p>Quantity : {quantityItems[i].number}
+                <button onClick={() => incrementItem(ittItem.id, i)}>+</button>
+                <button onClick={() => decrementItem(ittItem.id, i)}>-</button>
               </p>
-              <p>Price : {padPrices(item.price)}</p>
-              <p>Sub-Total : {padPrices(subtotalItems[i])}</p>
-              <button onClick={() => deleteFromCart(i)}>Delete From Cart</button>
+              <p>Price : {padPrices(ittItem.item.price)}</p>
+              <p>Sub-Total : {padPrices(subtotalItems[i].number)}</p>
+              <button onClick={() => deleteFromCart(ittItem.id, i)}>Delete From Cart</button>
             </li>
           ))}
         </ul>
       </div>
-      <h3>Order Total: {padPrices(totalPrice)}</h3>
+      <h3>Order Total: ${padPrices(totalPrice)}</h3>
       {totalItems > 0 && 
         <button>Complete Order</button>
       }
