@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component renders navbar correctly 1`] = `
+<div>
+  <nav>
+    <h3>
+      📦 Shipper-Shopper 🛒
+    </h3>
+    <ul
+      class="nav-links"
+    >
+      <a
+        href="/about"
+      >
+        <li
+          class="nav-link"
+        >
+          About
+        </li>
+      </a>
+      <a
+        href="/"
+      >
+        <li
+          class="nav-link"
+        >
+          Shop
+        </li>
+      </a>
+      <a
+        href="/cart"
+      >
+        <li
+          class="nav-link"
+        >
+          Cart
+        </li>
+      </a>
+    </ul>
+  </nav>
+</div>
+`;
