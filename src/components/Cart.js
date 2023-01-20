@@ -21,15 +21,14 @@ const Cart = (props) => {
             {cartItems.map((ittItem, i) => (
               <li key={ittItem.id}>
                 <h4>{ittItem.item.title}</h4>
-                <p>Quantity : {quantityItems[i].number}
-                  <div>
-                    <button onClick={() => incrementItem(ittItem.id, i)}>More</button>
-                    <button onClick={() => decrementItem(ittItem.id, i)}>Less</button>
-                  </div>
-                </p>
+                <p>Quantity : {quantityItems[i].number}</p>
+                <div>
+                  <button name='More' onClick={() => incrementItem(ittItem.id, i)}>More</button>
+                  <button name='Less' onClick={() => decrementItem(ittItem.id, i)}>Less</button>
+                </div>
                 <p>Price : {padPrices(ittItem.item.price)}</p>
                 <p>Sub-Total : {padPrices(subtotalItems[i].number)}</p>
-                <button onClick={() => deleteFromCart(ittItem.id, i)}>Delete From Cart</button>
+                <button name='Delete' onClick={() => deleteFromCart(ittItem.id, i)}>Delete From Cart</button>
               </li>
             ))}
           </ul>
