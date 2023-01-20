@@ -171,7 +171,7 @@ nav > h3 {
   background-color: #dbdbdb;
   display: flex;
   justify-content: center;
-  height: max-content;
+  height: 100%;
   padding-bottom: 1rem;
 }
 

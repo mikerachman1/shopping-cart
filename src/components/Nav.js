@@ -6,10 +6,10 @@ const Nav = () => {
     <nav>
       <h3>📦 Shipper-Shopper 🛒</h3>
       <ul className="nav-links">
-        <Link to="/">
+        <Link to="/about">
           <li className="nav-link">About</li>
         </Link>
-        <Link to="/shop">
+        <Link to="/">
           <li className="nav-link">Shop</li>
         </Link>
         <Link to="/cart">

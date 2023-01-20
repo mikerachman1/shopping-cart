@@ -114,8 +114,8 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/shop" element={<Shop 
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Shop 
                                         products={products}
                                         addToCart={addToCart}
                                         totalItems={totalItems}
