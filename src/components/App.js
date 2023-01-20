@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from "./components/About";
-import Shop from "./components/Shop";
-import Nav from "./components/Nav";
-import "./style.css";
-import Cart from "./components/Cart";
-import products from "./components/helpers/products";
+import About from "./About";
+import Shop from "./Shop";
+import Nav from "./Nav";
+import "./styles/style.css";
+import Cart from "./Cart";
+import products from "./helpers/products";
 
 let nextId = 0;
 
