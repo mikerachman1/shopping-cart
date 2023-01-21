@@ -87,7 +87,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Nav />
         <Routes>
           <Route path="/about" element={<About />} />
