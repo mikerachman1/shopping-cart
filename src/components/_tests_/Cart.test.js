@@ -8,7 +8,7 @@ import Cart from "../Cart";
 describe('Cart component', () => {
   
   it('renders items in cart', () => {
-    const cartItems = [{ id: 1, item: { title: 'Foo', price: 5 } }]
+    const cartItems = [{ id: 1, details: { title: 'Foo', price: 5 } }]
     const quantityItems = [{ id: 1, number: 1 }];
     const subtotalItems = [{ id: 1, number: 5 }];
     const totalItems = 1;
@@ -32,7 +32,7 @@ describe('Cart component', () => {
   });
 
   it('incrementing item calls incrementItemMock', () => {
-    const cartItems = [{ id: 1, item: { title: 'Foo', price: 5 } }]
+    const cartItems = [{ id: 1, details: { title: 'Foo', price: 5 } }]
     const quantityItems = [{ id: 1, number: 1 }];
     const subtotalItems = [{ id: 1, number: 5 }];
     const totalItems = 1;
@@ -59,7 +59,7 @@ describe('Cart component', () => {
   });
 
   it('decrementing item updates all prices/quantity info', () => {
-    const cartItems = [{ id: 1, item: { title: 'Foo', price: 5 } }]
+    const cartItems = [{ id: 1, details: { title: 'Foo', price: 5 } }]
     const quantityItems = [{ id: 1, number: 1 }];
     const subtotalItems = [{ id: 1, number: 5 }];
     const totalItems = 1;
@@ -86,7 +86,7 @@ describe('Cart component', () => {
   });
 
   it('deleting item from cart updates cart info', () => {
-    const cartItems = [{ id: 1, item: { title: 'Foo', price: 5 } }]
+    const cartItems = [{ id: 1, details: { title: 'Foo', price: 5 } }]
     const quantityItems = [{ id: 1, number: 1 }];
     const subtotalItems = [{ id: 1, number: 5 }];
     const totalItems = 1;

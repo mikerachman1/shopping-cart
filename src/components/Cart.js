@@ -15,13 +15,13 @@ const Cart = (props) => {
     <div className="cart">
       <div className="cart-container">
         <h1>Cart</h1>
-        <h3>Items in Cart: {totalItems}</h3>
+        <h3 data-testid="total-quantity">Items in Cart: {totalItems}</h3>
         <div className="cart-contents">
           <ul>
             {cartItems.map((ittItem, i) => (
               <li key={ittItem.id}>
                 <h4>{ittItem.details.title}</h4>
-                <p>Quantity : {quantityItems[i].number}</p>
+                <p data-testid="item-quantity">Quantity : {quantityItems[i].number}</p>
                 <div>
                   <button name='More' onClick={() => incrementItem(ittItem.id, i)}>More</button>
                   <button name='Less' onClick={() => decrementItem(ittItem.id, i)}>Less</button>

@@ -14,6 +14,7 @@ exports[`Nav component renders navbar correctly 1`] = `
       >
         <li
           class="nav-link"
+          name="About"
         >
           About
         </li>
@@ -23,6 +24,8 @@ exports[`Nav component renders navbar correctly 1`] = `
       >
         <li
           class="nav-link"
+          data-testid="nav-shop-link"
+          name="Shop"
         >
           Shop
         </li>
@@ -32,6 +35,8 @@ exports[`Nav component renders navbar correctly 1`] = `
       >
         <li
           class="nav-link"
+          data-testid="nav-cart-link"
+          name="Cart"
         >
           Cart
         </li>

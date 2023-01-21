@@ -7,13 +7,13 @@ const Nav = () => {
       <h3>📦 Shipper-Shopper 🛒</h3>
       <ul className="nav-links">
         <Link to="/about">
-          <li className="nav-link">About</li>
+          <li name="About" className="nav-link">About</li>
         </Link>
         <Link to="/">
-          <li className="nav-link">Shop</li>
+          <li name="Shop" data-testid='nav-shop-link' className="nav-link">Shop</li>
         </Link>
         <Link to="/cart">
-          <li className="nav-link">Cart</li>
+          <li name="Cart" data-testid='nav-cart-link' className="nav-link">Cart</li>
         </Link>
       </ul>
     </nav>
