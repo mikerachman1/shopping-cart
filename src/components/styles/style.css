@@ -8,6 +8,10 @@ body, #root, .App {
   height: 100vh;
 }
 
+.App {
+  background-color: #dbdbdb;
+}
+
 /* Nav styles */
 
 nav {
@@ -62,7 +66,7 @@ nav > h3 {
   background-color: white;
   border: 15px solid #22a88d;
   border-radius: 4px;
-  margin: 2rem;
+  margin: 4rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -179,7 +183,7 @@ nav > h3 {
   background-color: #dbdbdb;
   display: flex;
   justify-content: center;
-  height: 100%;
+  height: max-content;
   padding-bottom: 1rem;
 }
 
@@ -223,4 +227,30 @@ button {
 button:hover {
   box-shadow: 4px 4px 0 #000;
   transform: translate(-4px,-4px);
+}
+
+/* Media Queries */
+
+@media (min-width: 1700px) {
+  .about-info, .cart-container {
+    width: 60%;
+  }
+
+  .items {
+    margin: 2rem 14rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav, .item-container {
+    flex-direction: column;
+  }
+
+  .about-info > img {
+    max-width: 200px;
+  }
+
+  .about-info {
+    margin: 2rem;
+  }
 }
