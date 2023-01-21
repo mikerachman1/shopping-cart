@@ -33,9 +33,11 @@ function App() {
       // itemToAdd is already in cart
       const cartItemId = getCartItemId(itemToAdd);
       setQuantityItems(quantityItems.map((quan) => {
-        return (quan.id === cartItemId ? { id: quan.id, number: quan.number + quantity } : quan) }));
+        return (quan.id === cartItemId ? { id: quan.id, number: quan.number + quantity } : quan)
+      }));
       setSubtotalItems(subtotalItems.map((sub) => {
-        return (sub.id === cartItemId ? { id: sub.id, number: sub.number + (itemToAdd.price * quantity) } : sub) }));
+        return (sub.id === cartItemId ? { id: sub.id, number: sub.number + (itemToAdd.price * quantity) } : sub)
+      }));
     } else {
       // itemToAdd is not already in cart
       nextId += 1;
@@ -59,22 +61,12 @@ function App() {
 
   const incrementItem = (itemId, itemIndex) => {
     const itemPrice = cartItems[itemIndex].details.price;
-    // find value in array and update just that value (quant, sub)
     setQuantityItems(quantityItems.map((quan) => {
-      if (quan.id === itemId) {
-        return { id: quan.id, number: quan.number + 1 };
-      } else {
-        return quan;
-      }
+      return (quan.id === itemId ? { id: quan.id, number: quan.number + 1 } : quan)
     }));
     setSubtotalItems(subtotalItems.map((sub) => {
-      if (sub.id === itemId) {
-        return { id: sub.id, number: sub.number + itemPrice }
-      } else {
-        return sub;
-      }
+      return (sub.id === itemId ? { id: sub.id, number: sub.number + itemPrice } : sub)
     }));
-    // update totalitems and totalprice with new quantity
     setTotalItems(totalItems + 1);
     setTotalPrice(totalPrice + itemPrice);
   };
@@ -82,22 +74,12 @@ function App() {
   const decrementItem = (itemId, itemIndex) => {
     if (quantityItems[itemIndex].number <= 1) { return };
     const itemPrice = cartItems[itemIndex].details.price;
-    // find value in array and update just that value (quant, sub)
     setQuantityItems(quantityItems.map((quan) => {
-      if (quan.id === itemId) {
-        return { id: quan.id, number: quan.number - 1 };
-      } else {
-        return quan;
-      }
+      return (quan.id === itemId ? { id: quan.id, number: quan.number - 1 } : quan)
     }));
     setSubtotalItems(subtotalItems.map((sub) => {
-      if (sub.id === itemId) {
-        return { id: sub.id, number: sub.number - itemPrice }
-      } else {
-        return sub;
-      }
+      return (sub.id === itemId ? { id: sub.id, number: sub.number - itemPrice } : sub)
     }));
-    // update totalitems and totalprice with new quantity
     setTotalItems(totalItems - 1);
     setTotalPrice(totalPrice - itemPrice);
   };
