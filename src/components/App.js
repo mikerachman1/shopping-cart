@@ -16,36 +16,30 @@ function App() {
   const [totalItems, setTotalItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  const itemInCart = (itemToAdd) => {
+    const cartItemsArray = cartItems.map(item => item.details);
+    return cartItemsArray.includes(itemToAdd);
+  };
+
+  const getCartItemId = (itemToAdd) => {
+    const cartItemsArray = cartItems.map(item => item.details);
+    const cartIdArray = cartItems.map(item => item.id);
+    return cartIdArray[cartItemsArray.indexOf(itemToAdd)];
+  };
+
   const addToCart = (itemToAdd, quantity) => {
     if (quantity < 1) { return }
-    //if item is already in cart update quantityItems with corresponding index
-    let itemsArray = [];
-    let idArray = [];
-    cartItems.forEach((item) => {
-      itemsArray.push(item.item);
-      idArray.push(item.id);
-    })
-
-    if (itemsArray.includes(itemToAdd)) {
-      const idIndex = itemsArray.indexOf(itemToAdd);
-      const itemId = idArray[idIndex];
+    if (itemInCart(itemToAdd)) {
+      // itemToAdd is already in cart
+      const cartItemId = getCartItemId(itemToAdd);
       setQuantityItems(quantityItems.map((quan) => {
-        if (quan.id === itemId) {
-          return { id: quan.id, number: quan.number + quantity }
-        } else {
-          return quan
-        }
-      }));
+        return (quan.id === cartItemId ? { id: quan.id, number: quan.number + quantity } : quan) }));
       setSubtotalItems(subtotalItems.map((sub) => {
-        if (sub.id === itemId) {
-          return { id: sub.id, number: sub.number + (itemToAdd.price * quantity) }
-        } else {
-          return sub
-        }
-      }))
+        return (sub.id === cartItemId ? { id: sub.id, number: sub.number + (itemToAdd.price * quantity) } : sub) }));
     } else {
+      // itemToAdd is not already in cart
       nextId += 1;
-      setCartItems([...cartItems, { id: nextId, item: itemToAdd }]);
+      setCartItems([...cartItems, { id: nextId, details: itemToAdd }]);
       setQuantityItems([...quantityItems, { id: nextId, number: quantity }]);
       setSubtotalItems([...subtotalItems, { id: nextId, number: (itemToAdd.price * quantity) }]);  
     }
@@ -64,7 +58,7 @@ function App() {
   };
 
   const incrementItem = (itemId, itemIndex) => {
-    const itemPrice = cartItems[itemIndex].item.price;
+    const itemPrice = cartItems[itemIndex].details.price;
     // find value in array and update just that value (quant, sub)
     setQuantityItems(quantityItems.map((quan) => {
       if (quan.id === itemId) {
@@ -87,7 +81,7 @@ function App() {
 
   const decrementItem = (itemId, itemIndex) => {
     if (quantityItems[itemIndex].number <= 1) { return };
-    const itemPrice = cartItems[itemIndex].item.price;
+    const itemPrice = cartItems[itemIndex].details.price;
     // find value in array and update just that value (quant, sub)
     setQuantityItems(quantityItems.map((quan) => {
       if (quan.id === itemId) {

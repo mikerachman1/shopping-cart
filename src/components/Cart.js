@@ -20,13 +20,13 @@ const Cart = (props) => {
           <ul>
             {cartItems.map((ittItem, i) => (
               <li key={ittItem.id}>
-                <h4>{ittItem.item.title}</h4>
+                <h4>{ittItem.details.title}</h4>
                 <p>Quantity : {quantityItems[i].number}</p>
                 <div>
                   <button name='More' onClick={() => incrementItem(ittItem.id, i)}>More</button>
                   <button name='Less' onClick={() => decrementItem(ittItem.id, i)}>Less</button>
                 </div>
-                <p>Price : {padPrices(ittItem.item.price)}</p>
+                <p>Price : {padPrices(ittItem.details.price)}</p>
                 <p>Sub-Total : {padPrices(subtotalItems[i].number)}</p>
                 <button name='Delete' onClick={() => deleteFromCart(ittItem.id, i)}>Delete From Cart</button>
               </li>
