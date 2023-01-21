@@ -87,7 +87,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/cart">
         <Nav />
         <Routes>
           <Route path="/about" element={<About />} />
