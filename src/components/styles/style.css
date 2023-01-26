@@ -57,7 +57,7 @@ nav > h3 {
   display: flex;
   justify-content: center;
   background-color: #dbdbdb;
-  height: 100%;
+  height: max-content;
 }
 
 .about-info {

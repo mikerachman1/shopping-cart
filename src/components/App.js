@@ -87,11 +87,11 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/cart">
+      <BrowserRouter>
         <Nav />
         <Routes>
           <Route path="/about" element={<About />} />
-          <Route path="/" element={<Shop 
+          <Route path="/shop" element={<Shop 
                                         products={products}
                                         addToCart={addToCart}
                                         totalItems={totalItems}
