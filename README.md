@@ -1,4 +1,4 @@
-visit-app: https://mikerachman1.github.io/shopping-cart/#/shop
+visit-app: https://mikerachman1.github.io/shopping-cart/
 
 This is a faux online shop built using React. 
 
