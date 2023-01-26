@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import About from "./About";
 import Shop from "./Shop";
 import Nav from "./Nav";
@@ -87,11 +87,11 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Nav />
         <Routes>
           <Route path="/about" element={<About />} />
-          <Route path="/shop" element={<Shop 
+          <Route path="/" element={<Shop 
                                         products={products}
                                         addToCart={addToCart}
                                         totalItems={totalItems}
@@ -108,7 +108,7 @@ function App() {
                                         decrementItem={decrementItem}
                                         />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
