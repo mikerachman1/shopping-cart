@@ -1,6 +1,6 @@
 # Shipper Shopper
 
-A fake online shop built with React.
+An online shop built with React.
 
 [👉 Live demo 👈](https://mikerachman1.github.io/shopping-cart/)
 
