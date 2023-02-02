@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <nav>
-      <h3>📦 Shipper-Shopper 🛒</h3>
+      <h3>Shipper-Shopper</h3>
       <ul className="nav-links">
         <Link to="/about">
           <li name="About" className="nav-link">About</li>
