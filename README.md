@@ -19,7 +19,7 @@ A fake online shop built with React.
 
   This project includes a suite of tests created using the React Testing Library and Jest. Tests do not provide full coverage, as they were written to practice testing skills.
 ## Screenshot
-![Alt text](/src/images/screenshot.png?raw=true)
+![screenshot](/src/images/screenshot.png?raw=true)
 
 ## Notes
   - The "Complete Order" button has no functionality, checking out is beyond the scope of this project. 
